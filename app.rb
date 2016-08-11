@@ -8,9 +8,19 @@ class App < Sinatra::Base
   end
 
   # This is a sample dynamic route.
-  get "/hello/:name" do
-    @user_name = params[:name]
+  get "/hello/:moose" do
+    @user_name = params[:moose]
     "Hello #{@user_name}!"
+  end
+
+  get '/goodbye/:moose' do 
+  	@user_name = params[:moose]
+  	"Goodbye #{@user_name}"
+  end
+
+  get '/multiply/:num1/:num2' do 
+  	@answer = params[:num1].to_f * params[:num2].to_f
+  	"Product: #{@answer}"
   end
 
 
